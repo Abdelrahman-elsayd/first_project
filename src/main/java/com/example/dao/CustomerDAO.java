@@ -1,5 +1,7 @@
-package com.example;
+package com.example.dao;
 
+import com.example.entities.Customer;
+import com.example.repository.CustomerRepository;
 import io.micronaut.transaction.annotation.Transactional;
 import jakarta.inject.Singleton;
 import java.util.Optional;
@@ -30,6 +32,6 @@ public class CustomerDAO {
     }
     @Transactional
     public Customer update(Customer customer) {
-        return repository.update(customer); // ✅ attach and update
+        return repository.update(customer);
     }
 }

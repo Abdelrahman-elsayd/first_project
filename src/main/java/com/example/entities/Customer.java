@@ -1,8 +1,18 @@
-package com.example;
+package com.example.entities;
 import io.micronaut.serde.annotation.Serdeable;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Serdeable
+@Builder
+@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "customers")
 public class Customer {
 
     @Id
