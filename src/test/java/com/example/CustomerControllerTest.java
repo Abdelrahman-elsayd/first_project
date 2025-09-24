@@ -1,6 +1,6 @@
 package example;
 
-import com.example.Customer;
+import com.example.entities.Customer;
 import io.micronaut.core.type.Argument;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
@@ -10,7 +10,6 @@ import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,15 +24,15 @@ class CustomerControllerTest {
     @Test
     void testCreateCustomer() {
         Customer customer = new Customer();
-        customer.setName(" ali");
+        customer.setName("ali");
         customer.setEmail("ali@example.com");
 
         HttpRequest<Customer> request = HttpRequest.POST("/customers", customer);
         Customer response = client.toBlocking().retrieve(request, Customer.class);
 
         assertNotNull(response.getId());
-        assertEquals("John Doe", response.getName());
-        assertEquals("john@example.com", response.getEmail());
+        assertEquals("ali", response.getName());
+        assertEquals("ali@example.com", response.getEmail());
     }
 
     @Test

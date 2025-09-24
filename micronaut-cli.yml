@@ -4,3 +4,9 @@ testFramework: junit
 sourceLanguage: java
 buildTool: gradle_kotlin
 features: [app-name, data, data-jpa, gradle, h2, http-client-test, java, java-application, jdbc-hikari, junit, logback, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, properties, readme, serialization-jackson, shade, static-resources]
+jms:
+  activemq:
+    name: default
+    broker-url: vm://localhost?broker.persistent=false
+    username: admin
+    password: admin
